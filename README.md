@@ -23,18 +23,15 @@ The constraints were pretty strict:
 
 ```
 Lawtech Assignment/
-├── README.md (this file)
-├── Original Templates
-│   ├── temp1.html (Trigonometry Template)
-│   ├── interestcompounded.html (Compound Interest Template)
-│   ├── arrow.png
-│   └── interesticon.png
-├── Template 1 Solutions (Trigonometry)
-│   ├── problem1_trigonometry_pythagorean.html
-│   └── problem2_trigonometry_verification.html
-└── Template 2 Solutions (Compound Interest)
-    ├── problem3_compound_interest_rate.html
-    └── problem4_compound_interest_calculation.html
+├── README.md
+├── temp1.html (Original Trigonometry Template)
+├── interestcompounded.html (Original Compound Interest Template)
+├── arrow.png (Template asset)
+├── interesticon.png (Template asset)
+├── problem1_trigonometry_pythagorean.html (Template 1 Solution)
+├── problem2_trigonometry_verification.html (Template 1 Solution)
+├── problem3_compound_interest_rate.html (Template 2 Solution)
+└── problem4_compound_interest_calculation.html (Template 2 Solution)
 ```
 
 ## Problems Solved
