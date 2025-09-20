@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find Hypotenuse and Trigonometric Ratios</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        font-family: Calibri, sans-serif;
+      }
+      body {
+        background: #f6f8fb;
+        padding: 20px;
+        color: #333;
+        font-size: 27px;
+        font-weight: bold;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        background: white;
+        padding: 20px;
+        border-radius: 16px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        gap: 80px;
+      }
+
+      .triangle-diagram {
+        position: relative;
+        width: 240px;
+        height: 140px;
+        margin: 40px auto;
+      }
+
+      .side.ab {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 4px;
+        height: 140px;
+        background: black;
+      }
+
+      .side.bc {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 240px;
+        height: 4px;
+        background: black;
+      }
+
+      .side-ac-line {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+      }
+
+      .label {
+        position: absolute;
+        font-weight: bold;
+        background: white;
+        padding: 2px 6px;
+        border-radius: 6px;
+        box-shadow: 3px 3px 4px rgba(181, 181, 181, 1.5);
+        color: black;
+      }
+
+      .point-a {
+        top: -20px;
+        left: -15px;
+        background-color: #ed8392;
+      }
+
+      .point-b {
+        bottom: -25px;
+        left: -15px;
+        background-color: #7bc3ec;
+      }
+
+      .point-c {
+        bottom: -25px;
+        right: -15px;
+        background-color: #b7f3f0;
+      }
+
+      .dimension {
+        position: absolute;
+        background: white;
+        padding: 2px 6px;
+        border-radius: 10px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        box-shadow: 3px 3px 4px rgba(181, 181, 181, 1.5);
+      }
+
+      .ab-label {
+        left: -40px;
+        top: 45px;
+        background: linear-gradient(to top, #f5faff, #3399ff);
+      }
+
+      .bc-label {
+        bottom: -35px;
+        left: 90px;
+        background: linear-gradient(to top, #f9fad6, #f3ddff);
+      }
+
+      .ac-label {
+        top: 40px;
+        right: 90px;
+        background: linear-gradient(to top, #f3ddff, #feb78a);
+      }
+
+      .formula-table {
+        background: #222;
+        color: white;
+        border-radius: 10px;
+        padding: 10px 20px;
+        display: inline-block;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .explanation-box-1 {
+        border-radius: 12px;
+        padding: 16px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        gap: 20px;
+        align-items: anchor-center;
+      }
+
+      .math-box {
+        border-radius: 12px;
+        padding: 10px 20px;
+        margin: 10px 0;
+        font-weight: bold;
+        display: inline-block;
+        text-align: center;
+      }
+
+      .fraction {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .line-by {
+        width: 40px;
+        height: 3px;
+        background: gray;
+      }
+
+      .linel-by {
+        width: 140px;
+        height: 3px;
+        background: white;
+      }
+
+      .fraction-container {
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        gap: 6px;
+      }
+
+      .answer-box {
+        font-size: 30px;
+        background-color: #1bad83;
+        color: white;
+        padding: 6px 20px;
+        border-radius: 10px;
+        font-weight: bold;
+        margin-left: 10px;
+        box-shadow: 3px 3px 4px rgba(181, 181, 181, 1.5);
+      }
+      .formulaBoxUltimate {
+        width: 298px;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        margin-top: 10px;
+      }
+      .arrow-img {
+        width: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <div class="explanation-box-1">
+          <div class="math-box">
+            <span
+              style="
+                background: #ed8392;
+                color: black;
+                padding: 4px 8px;
+                border-radius: 6px;
+                box-shadow: 3px 3px 4px rgba(181, 181, 181, 1.5);
+              "
+              >A</span
+            >
+            <span
+              style="
+                background: #b7f3f0;
+                color: black;
+                padding: 4px 8px;
+                border-radius: 6px;
+                box-shadow: 3px 3px 4px rgba(181, 181, 181, 1.5);
+              "
+              >C</span
+            >² =
+            <span
+              style="
+                background: #7bc3ec;
+                color: black;
+                padding: 4px 8px;
+                border-radius: 6px;
+                box-shadow: 3px 3px 4px rgba(181, 181, 181, 1.5);
+              "
+              >A</span
+            >
+            <span
+              style="
+                background: #7bc3ec;
+                color: black;
+                padding: 4px 8px;
+                border-radius: 6px;
+                box-shadow: 3px 3px 4px rgba(181, 181, 181, 1.5);
+              "
+              >B</span
+            >² +
+            <span
+              style="
+                background: #b7f3f0;
+                color: black;
+                padding: 4px 8px;
+                border-radius: 6px;
+                box-shadow: 3px 3px 4px rgba(181, 181, 181, 1.5);
+              "
+              >B</span
+            >
+            <span
+              style="
+                background: #b7f3f0;
+                color: black;
+                padding: 4px 8px;
+                border-radius: 6px;
+                box-shadow: 3px 3px 4px rgba(181, 181, 181, 1.5);
+              "
+              >C</span
+            >²
+          </div>
+          <div
+            style="
+              border: 2px solid #ccc;
+              border-radius: 10px;
+              background: #f2f2f2;
+            "
+          >
+            <div class="math-box">
+              <div>AC² = 9² + 12² = 81 + 144 = 225</div>
+              <div><img src="arrow.png" alt="arrow" class="arrow-img" /></div>
+
+              <div>AC = √225 = 15 cm</div>
+            </div>
+          </div>
+          <div class="fraction-container">
+            <span
+              >Sin
+              <span
+                style="
+                  background: #f79ba2;
+                  color: black;
+                  padding: 4px 8px;
+                  border-radius: 6px;
+                  box-shadow: 3px 3px 4px rgba(181, 181, 181, 1.5);
+                "
+                >A</span
+              >
+              =</span
+            >
+            <div class="fraction">
+              <div>12</div>
+              <div class="line-by"></div>
+              <div>15</div>
+            </div>
+            <span>&nbsp;=&nbsp;</span>
+            <div class="fraction">
+              <div>4</div>
+              <div class="line-by"></div>
+              <div>5</div>
+            </div>
+          </div>
+          <div class="fraction-container" style="margin-left: 0px">
+            <span
+              >Cos
+              <span
+                style="
+                  background: #f79ba2;
+                  color: black;
+                  padding: 4px 8px;
+                  border-radius: 6px;
+                  box-shadow: 3px 3px 4px rgba(181, 181, 181, 1.5);
+                "
+                >A</span
+              >
+              =</span
+            >
+            <div class="fraction">
+              <div>9</div>
+              <div class="line-by"></div>
+              <div>15</div>
+            </div>
+            <span>&nbsp;=&nbsp;</span>
+            <div class="answer-box">3/5</div>
+          </div>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column">
+        <div class="triangle-diagram">
+          <div class="side ab"></div>
+          <div class="side bc"></div>
+
+          <svg class="side-ac-line" width="240" height="140">
+            <!-- Triangle fill -->
+            <polygon
+              points="0,140 0,0 240,140"
+              fill="rgba(173, 216, 230, 0.2)"
+            />
+            <!-- Hypotenuse line (AC) -->
+            <line
+              x1="0"
+              y1="0"
+              x2="240"
+              y2="140"
+              stroke="black"
+              stroke-width="4"
+            />
+          </svg>
+
+          <div class="label point-a">A</div>
+          <div class="label point-b">B</div>
+          <div class="label point-c">C</div>
+          <div class="dimension ab-label">12 cm</div>
+          <div class="dimension bc-label">9 cm</div>
+          <div class="dimension ac-label">15 cm</div>
+        </div>
+        <div class="formulaBoxUltimate">
+          <div class="formula-table" style="border-radius: 10px 10px 0px 0px">
+            <div class="fraction-container">
+              Sin
+              <span
+                style="
+                  background: #f79ba2;
+                  color: black;
+                  padding: 4px 8px;
+                  border-radius: 6px;
+                "
+                >A</span
+              >
+              =
+              <div class="fraction">
+                <div>Opposite</div>
+                <div class="linel-by"></div>
+                <div>Hypotenuse</div>
+              </div>
+            </div>
+          </div>
+          <div class="formula-table" style="border-radius: 0px 0px 10px 10px">
+            <div class="fraction-container">
+              Cos
+              <span
+                style="
+                  background: #f79ba2;
+                  color: black;
+                  padding: 4px 8px;
+                  border-radius: 6px;
+                "
+                >A</span
+              >
+              =
+              <div class="fraction">
+                <div>Adjacent</div>
+                <div class="linel-by"></div>
+                <div>Hypotenuse</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
